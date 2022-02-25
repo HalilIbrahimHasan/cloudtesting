@@ -47,6 +47,7 @@ public class Test1 {
         options.addArguments("headless");
         options.addArguments("disable-gpu");
         driver = new ChromeDriver(options);
+        driver.manage().deleteAllCookies();
         driver.get("https://www.amazon.com");
         System.out.println("Title of the page is: " + driver.getTitle());
         Assert.assertTrue("This page is unexpected!",driver.getTitle().contains("Amazon"));
